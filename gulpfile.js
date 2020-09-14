@@ -8,6 +8,46 @@ let gulp = require('gulp'),
 	imagemin = require('gulp-imagemin');
 	concat = require('gulp-concat');
 
+
+/**********
+ * 
+ * 
+ *  Подключение live reload,
+ *  Подключение слежения
+ * 
+ * 
+ **********/
+
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "app/"
+        }
+    });
+});
+
+gulp.task('watch', function() {
+	gulp.watch('app/*.html', gulp.parallel('html'));
+	gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'));
+	gulp.watch('app/js-work/**/*.js', gulp.parallel('js'));
+});
+
+
+/**********
+ * 
+ * 
+ *  Рабочие таски
+ * 
+ * 
+ **********/
+
+
+gulp.task('html', function() {
+	return gulp.src('app/*.html')
+	.pipe(browserSync.stream());
+});
+
 gulp.task('scss', function() {
 	return gulp.src('app/scss/**/*.scss')
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
@@ -20,19 +60,6 @@ gulp.task('scss', function() {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('html', function() {
-	return gulp.src('app/*.html')
-	.pipe(browserSync.stream());
-});
-
-gulp.task('js', function() {
-	return gulp.src('app/js/main.js')
-	.pipe(uglify())
-	.pipe(rename({suffix: '.min'}))
-	.pipe(gulp.dest('app/js'))
-	.pipe(browserSync.stream());
-})
-
 gulp.task('libs-js', function() {
 	return gulp.src(
 		'node_modules/slick-carousel/slick/slick.js',
@@ -44,25 +71,34 @@ gulp.task('libs-js', function() {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('imagemin', function(){
-	return gulp.src('app/img/**/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('app/img-min/'))
-});
+gulp.task('js', function() {
+	return gulp.src('app/js-work/main.js')
+	.pipe(uglify())
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.stream());
+})
 
-gulp.task('watch', function() {
-	gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'));
-	gulp.watch('app/*.html', gulp.parallel('html'));
-	gulp.watch('app/js/**/*.js', gulp.parallel('js'));
-});
 
-// Static server
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        server: {
-            baseDir: "app/"
-        }
-    });
-});
+/**********
+ * 
+ * 
+ *  Запуск default таска
+ *  Запуск prodact таска
+ * 
+ * 
+ **********/
+ 
+gulp.task('default', gulp.parallel('scss', 'libs-js', 'js', 'watch',  'browser-sync'));
 
-gulp.task('default', gulp.parallel('scss', 'libs-js', 'browser-sync', 'watch'));
+gulp.task('prodaction', function(){
+	return gulp.src([ // Выбираем нужные файлы
+		'app/css/**/*.min.css',
+		'app/js/**/*.min.js',
+		'app/img/**/*',
+		'app/**/*.html',
+		'app/font/**/*',
+		'app/svg/**/*'
+		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
+	.pipe(gulp.dest('dist')) // Выгружаем в папку с финальной сборкой
+});
