@@ -22,7 +22,9 @@ let gulp = require('gulp'),
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "app/"
+			baseDir: "app/",
+			notify: false, // Отключаем уведомления
+			online: true // Режим работы: true или false
         }
     });
 });
@@ -89,7 +91,7 @@ gulp.task('js', function() {
  * 
  **********/
  
-gulp.task('default', gulp.parallel('scss', 'libs-js', 'js', 'watch',  'browser-sync'));
+gulp.task('default', gulp.parallel('html', 'scss', 'libs-js', 'js', 'watch',  'browser-sync'));
 
 gulp.task('prodaction', function(){
 	return gulp.src([ // Выбираем нужные файлы
