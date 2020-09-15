@@ -1,5 +1,27 @@
 @import "../../node_modules/normalize.css/normalize";
 
+/* main */
+
+$mainFont: 'Gilroy';
+
+@font-face {
+    font-family: "Gilroy"; /* Имя шрифта */
+    src: url(../font/Gilroy-Bold.ttf); /* Путь к файлу со шрифтом */
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy"; /* Имя шрифта */
+    src: url(../font/Gilroy-Medium.ttf); /* Путь к файлу со шрифтом */
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: orange;
+    font-family: $mainFont;
 }
