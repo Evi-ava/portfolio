@@ -62,11 +62,46 @@ body {
         text-decoration: none;
         color: $secondColor;
         font-weight: bold;
-        &:hover {
+        &:hover, :active {
             color: $mainColor;
         }
 
     }
 
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 30px 0;
+}
+
+.logo {
+    font-family: $mainFont;
+    font-weight: bold;
+    font-size: 47px;
+    line-height: 57px;
+    color: $mainColor;
+}
+
+.top-text {
+    font-family: $mainFont;
+    font-weight: medium;
+    font-size: 18px;
+    line-height: 21px;
+    color: $mainColor;
+}
+
+.lang {
+font-family: 'Gilroy';
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+
+transform: rotate(-90deg);
 }
 
