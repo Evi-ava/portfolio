@@ -5,7 +5,8 @@ let gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename'),
-	imagemin = require('gulp-imagemin');
+	imagemin = require('gulp-imagemin'),
+	newer  = require('gulp-newer'),
 	concat = require('gulp-concat');
 
 
@@ -71,6 +72,13 @@ gulp.task('libs-js', function() {
 	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.stream());
+});
+
+gulp.task('img', function(){
+	return gulp.src('app/img/**/*') // Берём все изображения из папки источника
+	//.pipe(newer('app/img/')) // Проверяем, было ли изменено (сжато) изображение ранее
+	.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
+	.pipe(gulp.dest('dist/img/')) // Выгружаем оптимизированные изображения
 });
 
 gulp.task('js', function() {
