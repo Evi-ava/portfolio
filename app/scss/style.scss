@@ -1,8 +1,14 @@
 @import "../../node_modules/normalize.css/normalize";
 
-/* main */
+/****
+*
+*   main style
+*
+*****/
 
 $mainFont: 'Gilroy';
+$mainColor: #070707;
+$secondColor: #828282;
 
 @font-face {
     font-family: "Gilroy"; /* Имя шрифта */
@@ -24,4 +30,41 @@ $mainFont: 'Gilroy';
 
 body {
     font-family: $mainFont;
+    font-size: 18px;
 }
+
+.container {
+    max-width: 940px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/****
+*
+*   header sytle
+*
+*****/
+
+.menu {
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $secondColor;
+
+    &-item {
+        list-style: none;
+    }
+
+    &-link {
+        text-decoration: none;
+        color: $secondColor;
+        font-weight: bold;
+        &:hover {
+            color: $mainColor;
+        }
+
+    }
+
+}
+
