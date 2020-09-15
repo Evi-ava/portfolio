@@ -111,3 +111,39 @@ body {
     color: $mainColor;
     transform: rotate(-90deg);
 }
+
+
+/****
+*
+*   about-me sytle
+*
+*****/
+
+.about-me {
+    padding: 120px 0 107px 0;
+    background: #F6F6F6;
+    &__title {
+        margin-bottom: 18px;
+    }
+}
+
+.title {
+    font-family: $mainFont;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    color: $mainColor;
+}
+
+.text-block {
+    max-width: 485px;
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: $mainColor;
+    margin: 0px auto 25px auto;
+}
+
