@@ -30,6 +30,11 @@ $secondColor: #828282;
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: $mainFont;
     font-size: 18px;
