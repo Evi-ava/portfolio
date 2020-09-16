@@ -147,3 +147,47 @@ body {
     margin: 0px auto 25px auto;
 }
 
+
+/****
+*
+*   skills
+*
+*****/
+
+.skills {
+    padding: 91px 0 110px 0;
+    &__title {
+        margin-bottom: 69px;
+    }
+}
+
+.sub-title {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: $mainColor;
+    margin-bottom: 83px;
+}
+
+.skills-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-title {
+    margin: 24px 0 42px 0;
+    font-family: $mainFont;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: $secondColor;
+}
