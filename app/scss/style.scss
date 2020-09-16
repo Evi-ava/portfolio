@@ -44,6 +44,7 @@ body {
     max-width: 940px;
     width: 100%;
     margin: 0 auto;
+    padding: 20px;
 }
 
 
@@ -174,6 +175,7 @@ body {
 .skills-box {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .skills-block {
@@ -293,6 +295,12 @@ body {
     margin: 0 auto 45px auto;
 }
 
+
+@media ( max-width: 775px) {
+    .skills-block { 
+        margin-bottom: 50px;
+    }
+}
 
 
 
