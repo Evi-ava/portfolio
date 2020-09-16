@@ -15,7 +15,7 @@ $secondColor: #828282;
     src: url(../font/Gilroy-Bold.ttf); /* Путь к файлу со шрифтом */
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
 }
 
 @font-face {
@@ -23,7 +23,7 @@ $secondColor: #828282;
     src: url(../font/Gilroy-Medium.ttf); /* Путь к файлу со шрифтом */
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
 }
 
 * {
@@ -236,5 +236,65 @@ body {
     display: block;
     margin: 44px auto 0 auto;
 }
+
+/****
+*
+*   portfolio
+*
+*****/
+
+.contacts {
+    padding: 114px 0 123px 0;
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__sub-title {
+        margin-bottom: 30px;
+    }
+}
+
+.button {
+    display: block;
+    margin: 0 auto 85px auto;
+    background-color: $mainColor;
+    padding: 12px 30px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
+}
+
+.footer-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+
+    color: $secondColor;
+}
+
+.in, .instagram, .be, .dribble {
+    color: black;
+    text-decoration: none;
+    margin-right: 60px;
+}
+
+.dribble {
+    margin-right: 0;
+}
+
+.social {
+    max-width: 360px;
+    margin: 0 auto 45px auto;
+}
+
+
+
+
 
 
