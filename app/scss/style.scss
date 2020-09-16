@@ -15,7 +15,7 @@ $secondColor: #828282;
     src: url(../font/Gilroy-Bold.ttf); /* Путь к файлу со шрифтом */
     font-weight: 700;
     font-style: normal;
-    font-display: fallback;
+    font-display: swap;
 }
 
 @font-face {
@@ -23,7 +23,7 @@ $secondColor: #828282;
     src: url(../font/Gilroy-Medium.ttf); /* Путь к файлу со шрифтом */
     font-weight: 500;
     font-style: normal;
-    font-display: fallback;
+    font-display: swap;
 }
 
 * {
