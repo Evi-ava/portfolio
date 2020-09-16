@@ -203,3 +203,38 @@ body {
 .black {
     fill: $mainColor
 }
+
+/****
+*
+*   portfolio
+*
+*****/
+
+.portfolio {
+    padding: 112px 0 96px 0;
+    background-color: #F6F6F6;
+    &__title{
+        margin-bottom: 47px;
+    }
+}
+
+.portfolio-block {
+    margin-bottom: 100px;
+}
+
+.portfolio-block:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-link {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: $mainColor;
+    display: block;
+    margin: 44px auto 0 auto;
+}
+
+
