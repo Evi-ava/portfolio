@@ -191,3 +191,15 @@ body {
     text-align: center;
     color: $secondColor;
 }
+
+.star {
+    margin-right: 9px;
+    fill: #E5E5E5;
+    &:nth-child(5) {
+        margin-right: 0;
+    }
+}
+
+.black {
+    fill: $mainColor
+}
