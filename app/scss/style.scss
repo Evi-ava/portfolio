@@ -28,6 +28,7 @@ $secondColor: #828282;
 
 * {
     box-sizing: border-box;
+    outline: none;
 }
 
 img {
@@ -45,6 +46,21 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 20px;
+}
+
+
+/****
+*
+*   slick slider
+*
+*****/
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex; 
 }
 
 
