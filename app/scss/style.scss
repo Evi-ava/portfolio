@@ -318,6 +318,12 @@ body {
     }
 }
 
+@media ( min-width: 980px) {
+    .slider__item {
+        height: 368px;
+        background: #E5E5E5;
+    }
+}
 
 
 
