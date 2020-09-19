@@ -12,6 +12,7 @@ $(document).ready(function(){
         infinite: true,
         arrows: false,
         lazyLoad: 'ondemand',
+        
         autoplay: true,
         autoplaySpeed: 4000,
         speed: 700,
