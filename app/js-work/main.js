@@ -11,7 +11,7 @@ $(document).ready(function(){
     $('.slider').slick({
         infinite: true,
         arrows: false,
-        lazyLoad: 'ondemand',
+        //lazyLoad: 'ondemand',
         
         autoplay: true,
         autoplaySpeed: 4000,
@@ -23,7 +23,7 @@ $(document).ready(function(){
     $('.burger').click(function(){
         $('.burger, .menu-container, .burger__top, .burger__center, .burger__bot ').toggleClass('active');
         $('body').toggleClass('lock');
-        $('.burger').toggleClass('right');
+        $('.banner').toggleClass('hide');
     });
 });
 
