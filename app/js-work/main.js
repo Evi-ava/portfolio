@@ -19,6 +19,12 @@ $(document).ready(function(){
         fade: true,
         cssEase: 'linear'
     });
+
+    $('.burger').click(function(){
+        $('.burger, .menu-container, .burger__top, .burger__center, .burger__bot ').toggleClass('active');
+        $('body').toggleClass('lock');
+        $('.burger').toggleClass('right');
+    });
 });
 
 
